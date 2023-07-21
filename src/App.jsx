@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -6,7 +6,7 @@ function App() {
   // const url = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=88138dfdc16f7b57f722547ba4425c86`;
 
   return (
-    <>
+    <div className="app">
       <div className="container">
         <div className="top">
           <div className="location">
@@ -29,7 +29,7 @@ function App() {
           <div className="wind">12 MPH</div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
