@@ -7,7 +7,28 @@ function App() {
 
   return (
     <>
-      <h2>Running</h2>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>Polokwane</p>
+          </div>
+          <div className="temp">
+            <h1>12 degrees celsius</h1>
+          </div>
+          <div className="description">
+            <p>clouds</p>
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels">
+            <p>12 degrees celsius</p>
+          </div>
+          <div className="humidity">
+            <p>20%</p>
+          </div>
+          <div className="wind">12 MPH</div>
+        </div>
+      </div>
     </>
   );
 }
