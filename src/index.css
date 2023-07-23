@@ -33,6 +33,10 @@ h1 {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+::placeholder{
+  color: #f8f8f8;
+}
+
 .app::before {
   content: " ";
   background: url("./assets/clouds.jpg") no-repeat center center/cover;

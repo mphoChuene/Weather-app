@@ -4,28 +4,39 @@ import React, { useState } from "react";
 
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState(" ");
+  const [location, setLocation] = useState(""); // Removed extra space here
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=88138dfdc16f7b57f722547ba4425c86`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        console.log(response.data);
-      });
+      axios
+        .get(url)
+        .then((response) => {
+          setData(response.data);
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching weather data:", error);
+        });
+      setLocation(""); // Clear the location after the search
     }
+  };
+
+  // Updated the onChange event to set the location state properly
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
   };
 
   return (
     <div className="app">
       <div className="search">
         <input
+          type="text"
           value={location}
-          onChange={(event) => searchLocation(event.target.value)}
+          onChange={handleLocationChange}
           placeholder=" Enter Location"
           onKeyPress={searchLocation}
-          type="text"
         />
       </div>
       <div className="container">
